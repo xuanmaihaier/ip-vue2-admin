@@ -1,0 +1,32 @@
+before_script:
+  - export TYPE=`echo ${CI_COMMIT_REF_NAME} | rev | cut -d '_' -f 1 | rev`
+  - export RELEASE=${CI_COMMIT_REF_NAME%_dev}
+  - export MONTH_AND_DAY=`date +%m%d`
+  - export TIME_DIVISION=`date +%H%M`
+  - export MOUDLE_NAME=admin
+  - export MOUDLE_DIR="/root/deployment/web/${MOUDLE_NAME}/${TYPE}/${RELEASE}"
+  # 增加meta 告知用户版本号
+  - export VERSION_DIV="<script>var meta=document.createElement('meta');meta.name='${MOUDLE_NAME}';meta.content='${RELEASE}';if (document.getElementsByTagName('head')[0]) {document.getElementsByTagName('head')[0].appendChild(meta)}</script>"
+  - export VERSION_LOG="<script>console.log('%c ${MOUDLE_NAME} %c '.concat('${RELEASE}',' '),'background:#35495e;padding:1px;border-radius:3px 0 0 3px;color:#fff','background:#41b883;padding:1px;border-radius:0 3px 3px 0;color:#fff')</script>"
+stages:
+  - build
+  - deploy
+build-job:
+  stage: build
+  tags:
+    - frontend
+  only:
+    - /^.*_dev$/
+    - /^.*_master$/
+    - master
+  script:
+    - npm install --registry=http://10.1.1.161:4837
+    - npm run build:prod
+     # index html插入对应script
+    - echo ${VERSION_LOG} >>${MOUDLE_NAME}/index.html
+    - echo ${VERSION_DIV} >>${MOUDLE_NAME}/index.html
+    - mv ${MOUDLE_NAME} ${MOUDLE_NAME}-${MONTH_AND_DAY}.${TIME_DIVISION}-${RELEASE}
+    - zip -r ${MOUDLE_NAME}-${MONTH_AND_DAY}.${TIME_DIVISION}-${RELEASE}.zip ${MOUDLE_NAME}-${MONTH_AND_DAY}.${TIME_DIVISION}-${RELEASE}
+    - sudo rm -rf ${MOUDLE_DIR}
+    - sudo mkdir -p "${MOUDLE_DIR}"
+    - sudo mv ${MOUDLE_NAME}-${MONTH_AND_DAY}.${TIME_DIVISION}-${RELEASE}.zip ${MOUDLE_DIR}/

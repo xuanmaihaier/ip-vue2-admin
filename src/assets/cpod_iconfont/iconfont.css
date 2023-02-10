@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "cpod_iconfont"; /* Project id 3331038 */
+  src: url('iconfont.woff2?t=1658208730253') format('woff2'),
+       url('iconfont.woff?t=1658208730253') format('woff'),
+       url('iconfont.ttf?t=1658208730253') format('truetype');
+}
+
+.cpod_iconfont{
+  font-family: "cpod_iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cpod_iconfont.icon-icon_xinyong_xianxing_jijin-:before {
+  content: "\e610";
+}
+
+.cpod_iconfont.icon-zhanghao:before {
+  content: "\e66c";
+}
+
+.cpod_iconfont.icon-xiaoxi:before {
+  content: "\e6f5";
+}
+
+.cpod_iconfont.icon-gengduo:before {
+  content: "\e7ce";
+}
+
+.cpod_iconfont.icon-daochushuju:before {
+  content: "\e612";
+}
+

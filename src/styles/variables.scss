@@ -1,0 +1,36 @@
+// sidebar
+$menuText:#333333;
+$menuActiveText:#fff; //nav
+$subMenuActiveText:#333; 
+$menuItemHeight:40px;
+
+
+// $menuBg:#304156;
+$menuBg:#fff;
+$menuHover:#F3F7FE;
+
+$subMenuBg:#fff;
+
+$subMenuHover:#F3F7FE;
+$topMenuHover:#335C9A;
+
+
+$sideBarWidth: 200px;
+$topBarHeight: 40px;
+//$contentHeight: calc(100vh - 40px);
+
+$tableHeight:300px;
+
+
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  $menuItemHeight:$menuItemHeight;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  tableHeight: tableHeight;
+}

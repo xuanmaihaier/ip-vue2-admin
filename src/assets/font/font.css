@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'PingFang SC';
+  font-display: swap;
+  src: url('./PingFang SC.ttf');
+}
+@font-face {
+  font-family: 'PingFangSC-Medium';
+  font-display: swap;
+  src: url('./PingFangSC-Medium.ttf');
+}
+@font-face {
+  font-family: "DINAlternate-Bold";
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+  src: url('./DINAlternateBold.ttf');
+}

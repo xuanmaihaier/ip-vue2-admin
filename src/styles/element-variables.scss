@@ -1,0 +1,13 @@
+/* 改变主题色变量 */
+$--color-primary: #4580ff;
+$--border-color-base:#E6ECF7;
+$--border-color-light:#EDE5E4;
+$--color-text-placeholder:#C0C4CC;
+$--color-warning:#FFBF00;
+$--color-danger:#F04134;
+$--color-success:#248F2C;
+
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~web-vue2-front-end-lib/lib/theme-chalk/fonts';
+@import "~web-vue2-front-end-lib/packages/theme-chalk/src/index.scss";

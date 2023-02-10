@@ -1,0 +1,44 @@
+{
+  "id": "3331038",
+  "name": "集采",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9697171",
+      "name": "信用修复",
+      "font_class": "icon_xinyong_xianxing_jijin-",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "3851393",
+      "name": "账号",
+      "font_class": "zhanghao",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "1764101",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e6f5",
+      "unicode_decimal": 59125
+    },
+    {
+      "icon_id": "8797977",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e7ce",
+      "unicode_decimal": 59342
+    },
+    {
+      "icon_id": "16546174",
+      "name": "导出数据",
+      "font_class": "daochushuju",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    }
+  ]
+}
