@@ -3,7 +3,8 @@ before_script:
   - export RELEASE=${CI_COMMIT_REF_NAME%_dev}
   - export MONTH_AND_DAY=`date +%m%d`
   - export TIME_DIVISION=`date +%H%M`
-  - export MOUDLE_NAME=admin
+  # 业务系统打包遵循 项目名称截取'web-'规范
+  - if [[ ${CI_PROJECT_NAME} =~ ^web- ]]; then export MOUDLE_NAME="${CI_PROJECT_NAME#web-}"; else export MOUDLE_NAME="${CI_PROJECT_NAME}"; fi
   - export MOUDLE_DIR="/root/deployment/web/${MOUDLE_NAME}/${TYPE}/${RELEASE}"
   # 增加meta 告知用户版本号
   - export VERSION_DIV="<script>var meta=document.createElement('meta');meta.name='${MOUDLE_NAME}';meta.content='${RELEASE}';if (document.getElementsByTagName('head')[0]) {document.getElementsByTagName('head')[0].appendChild(meta)}</script>"

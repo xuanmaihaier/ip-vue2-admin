@@ -11,6 +11,9 @@ const urlList = [
   'api/v1/rule/subject'
 ]
 
+// cli生成的项目会自动带截取掉'web-'前缀的环境变量
+const baseURL = process.env.VUE_APP_BASE_NAME ? `/${process.env.VUE_APP_BASE_NAME}/` : '/'
+
 let loading = null // loading对象
 let needLoadingRequestCount = 0 // 当前正在请求的数量
 
@@ -47,20 +50,21 @@ const hideScreenLoading = () => {
 }
 
 const service = axios.create({
+  // cli生成的项目会自动带截取掉'web-'前缀的环境变量
+  baseURL: baseURL,
   timeout: 20000,
   headers: { 'Content-type': 'application/json' }
 })
 
 service.interceptors.request.use(
   config => {
-    if (process.env.NODE_ENV === 'production') {
-      if (/^\/api/.test(config.url)) {
-        config.baseURL = '/admin/'
-      }
-    } else {
-      config.baseURL = '/'
-    }
-
+    // if (process.env.NODE_ENV === 'production') {
+    //   if (/^\/api/.test(config.url)) {
+    //     config.baseURL = '/admin/'
+    //   }
+    // } else {
+    //   config.baseURL = '/'
+    // }
     let flag = false
     flag = urlList.some(value => {
       return config.url.indexOf(value) != -1

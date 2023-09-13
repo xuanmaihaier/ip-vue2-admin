@@ -31,11 +31,9 @@ export default {
   },
   methods: {
     goBack() {
-      if (process.env.NODE_ENV == 'production') {
-        location.href = '/admin'
-      } else {
-        location.href = '/'
-      }
+      // cli生成的项目会自动带截取掉'web-'前缀的环境变量
+      const baseURL = process.env.VUE_APP_BASE_NAME ? `/${process.env.VUE_APP_BASE_NAME}` : '/'
+      location.href = baseURL
     }
   }
 }
