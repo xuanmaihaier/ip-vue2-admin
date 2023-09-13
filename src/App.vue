@@ -7,13 +7,14 @@
 import moment from 'moment'
 import 'moment/locale/zh-cn'
 import { syscenterApi } from '@/api/index'
-const defaultSettings = require('./src/settings.js')
-const title = defaultSettings.title || '逸曜后台'
+const defaultSettings = require('@/settings.js')
+const title = defaultSettings.title
 export default {
   name: 'App',
   data() {
     return {
-      moment
+      moment,
+      title
     }
   },
   mounted() {

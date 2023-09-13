@@ -32,8 +32,8 @@
 <script>
 import { AppMain } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
-const defaultSettings = require('./src/settings.js')
-const title = defaultSettings.title || '逸曜后台'
+const defaultSettings = require('@/settings.js')
+const title = defaultSettings.title
 
 export default {
   name: 'Layout',

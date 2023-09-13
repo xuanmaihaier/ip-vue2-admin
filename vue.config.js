@@ -1,12 +1,12 @@
 'use strict'
 const path = require('path')
-const defaultSettings = require('./src/settings.js')
+const defaultSettings = require('@/settings.js')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || '逸曜后台'
+const name = defaultSettings.title
 const port = process.env.port || process.env.npm_config_port || 9528 // dev port
 // cli生成的项目会自动带截取掉'web-'前缀的环境变量
 const publicPath = process.env.VUE_APP_BASE_NAME ? `/${process.env.VUE_APP_BASE_NAME}/` : '/'
