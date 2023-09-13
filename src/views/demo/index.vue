@@ -2,8 +2,8 @@
   <div class="vue-doc full-fill">
     <div class="vue-content">
       <div class="vue-header">
-        <h1 class="vue-title">逸曜公用组件库 - 使用 <a target="_blank" href="http://gitlab/web-local-project/ip-vue-cli">ip-vue-cli</a> 快速创建</h1>
-        <p class="sub-title">逸曜公用组件库集成了逸曜公用<code>vuex、router、layout</code>布局、组件库等基础模块，开箱即用，减少项目开发时间成本。</p>
+        <h1 class="vue-title">逸曜公用后台  - 使用 <a target="_blank" href="http://gitlab/web-local-project/ip-vue-cli">ip-vue-cli</a> 快速创建</h1>
+        <p class="sub-title">逸曜公用后台集成了逸曜公用<code>vuex、router、layout</code>布局、组件库等基础模块，开箱即用，减少项目开发时间成本。</p>
       </div>
       <div class="vue-section">
         <h2 class="vue-section-title">下载依赖</h2>
