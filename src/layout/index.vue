@@ -3,7 +3,7 @@
     <ip-topbar
       :user-id="userId"
       :name="name"
-      title="逸曜后台"
+      :title="title"
       :page-resource="pageResource"
       :active-menu="activeMenu"
       :show-menu="false"
@@ -32,6 +32,8 @@
 <script>
 import { AppMain } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
+const defaultSettings = require('./src/settings.js')
+const title = defaultSettings.title || '逸曜后台'
 
 export default {
   name: 'Layout',
@@ -39,6 +41,11 @@ export default {
     AppMain
   },
   mixins: [ResizeMixin],
+  data: function() {
+    return {
+      title
+    }
+  },
   computed: {
     pageResource() {
       return this.$store.state.user.pageResource

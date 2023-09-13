@@ -7,7 +7,8 @@
 import moment from 'moment'
 import 'moment/locale/zh-cn'
 import { syscenterApi } from '@/api/index'
-
+const defaultSettings = require('./src/settings.js')
+const title = defaultSettings.title || '逸曜后台'
 export default {
   name: 'App',
   data() {
@@ -18,7 +19,7 @@ export default {
   mounted() {
     syscenterApi.getDocumentTitle().then(res => {
       if (res.code == 200 && res.data) {
-        document.title = '逸曜后台-' + res.data
+        document.title = `${title}-` + res.data
       }
     })
   }
